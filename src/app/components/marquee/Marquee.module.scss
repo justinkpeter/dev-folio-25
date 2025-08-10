@@ -1,0 +1,62 @@
+@use "../../styles/variables" as *;
+
+.marqueeWrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", monospace;
+
+  letter-spacing: 0.05em;
+}
+
+.marqueeContent {
+  display: flex;
+  white-space: nowrap;
+}
+
+.track {
+  display: inline-flex;
+  animation: scroll var(--speed) linear infinite;
+
+  span {
+    display: inline-block;
+    padding-right: 4px;
+  }
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.pauseOnHover:hover .track {
+  animation-play-state: paused;
+}
+
+.fadeLeft,
+.fadeRight {
+  position: absolute;
+  top: 0;
+  width: 20px;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.fadeLeft {
+  left: 0;
+  background: linear-gradient(to right, $black, transparent);
+  z-index: 1;
+}
+
+.fadeRight {
+  right: 0;
+  background: linear-gradient(to left, $black, transparent);
+}
