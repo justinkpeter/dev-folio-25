@@ -1,0 +1,170 @@
+$big-hero-font-size: clamp(2rem, 4vw, 5rem);
+
+// Animation timing
+$header-fade-duration: 0.6s;
+$header-fade-delay: 0s;
+$image-grow-duration: 0.8s;
+$image-grow-delay: 0.5s;
+$subtitle-delay: #{$image-grow-delay + 0.6s};
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 90vh;
+  padding-bottom: 4rem;
+  position: relative;
+  z-index: 1;
+  user-select: none;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 10vh;
+    height: 85vh;
+  }
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.heading {
+  font-weight: 800;
+  font-size: $big-hero-font-size;
+  text-transform: uppercase;
+  line-height: 0.85;
+  text-align: center;
+  margin: 0;
+  white-space: nowrap;
+  opacity: 0;
+}
+
+.headingTop {
+  padding-bottom: 0;
+  animation:
+    fadeInFull $header-fade-duration ease forwards $header-fade-delay,
+    growPaddingBottom $image-grow-duration cubic-bezier(0.76, 0, 0.24, 1)
+      forwards $image-grow-delay;
+}
+
+.headingBottom {
+  padding-top: 0;
+  animation:
+    fadeInFull $header-fade-duration ease forwards $header-fade-delay,
+    growPaddingTop $image-grow-duration cubic-bezier(0.76, 0, 0.24, 1) forwards
+      $image-grow-delay;
+}
+
+.folio {
+  width: 27.5vw;
+  overflow: hidden;
+  max-height: 0;
+  aspect-ratio: 3 / 4;
+  animation: growHeight $image-grow-duration cubic-bezier(0.76, 0, 0.24, 1)
+    forwards $image-grow-delay;
+
+  @media screen and (max-width: 768px) {
+    width: 80vw;
+  }
+
+  .parallaxWrapper {
+    width: 100%;
+    height: 100%;
+    min-height: clamp(200px, 36.67vw, 500px);
+    position: relative;
+    overflow: hidden;
+
+    img {
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.1s linear;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 60%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    &::before {
+      top: 0;
+      backdrop-filter: blur(32px);
+      mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+    }
+
+    &::after {
+      bottom: 0;
+      backdrop-filter: blur(32px);
+      mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
+    }
+  }
+}
+
+.subTitle {
+  font-weight: 400;
+  opacity: 0;
+  font-size: 14px;
+  text-align: center;
+  animation: fadeInSubtle 0.5s ease forwards $subtitle-delay;
+}
+
+.scrollHint {
+  margin-top: 1rem;
+  pointer-events: none;
+}
+
+// Keyframes
+
+@keyframes fadeInFull {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInSubtle {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
+@keyframes growHeight {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 40vh;
+  }
+}
+
+@keyframes growPaddingBottom {
+  from {
+    padding-bottom: 0;
+  }
+  to {
+    padding-bottom: 0.2em;
+  }
+}
+
+@keyframes growPaddingTop {
+  from {
+    padding-top: 0;
+  }
+  to {
+    padding-top: 0.2em;
+  }
+}
