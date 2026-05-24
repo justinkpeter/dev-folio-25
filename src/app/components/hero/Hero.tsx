@@ -1,37 +1,26 @@
 "use client";
 
-import Image from "next/image";
 import styles from "./Hero.module.scss";
 import clsx from "clsx";
 import useParallax from "@/app/hooks/useParallax";
+import Model from "../Model";
 
 export default function Hero() {
-  const { ref: heroRef, offset } = useParallax(100);
+  const { ref: heroRef } = useParallax(100);
 
   return (
     <div className={styles.hero} ref={heroRef}>
       <div className={styles.stack}>
-        {/* Top header - fades in first */}
         <h1 className={clsx(styles.heading, styles.headingTop)}>
-          Justin Peter
+          Dev Folio &apos;{new Date().getFullYear().toString().slice(-2)}
         </h1>
 
-        {/* Image grows after headers fade in */}
         <div className={styles.folio}>
-          <div className={styles.parallaxWrapper}>
-            <Image
-              src="/img/hero.jpg"
-              alt="Hero"
-              fill
-              draggable={false}
-              style={{ transform: `translateY(${offset}px) scale(1.3)` }}
-            />
-          </div>
+          <Model />
         </div>
 
-        {/* Bottom header - fades in with top header */}
         <h1 className={clsx(styles.heading, styles.headingBottom)}>
-          Dev Folio &apos;{new Date().getFullYear().toString().slice(-2)}
+          Justin Peter
         </h1>
       </div>
 

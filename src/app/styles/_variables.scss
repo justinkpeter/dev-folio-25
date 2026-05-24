@@ -1,11 +1,26 @@
+// Colors
+$black: #252525;
+$white: #ffffff;
+
+// Typography
+$big-hero-font-size: clamp(2rem, 4vw, 5rem);
+
+// Animation timing
+$header-fade-duration: 1.4s;
+$header-fade-delay: 0.2s;
+$image-grow-duration: 0.8s;
+$image-grow-delay: 0.8s;
+$subtitle-delay: #{$image-grow-delay + 0.6s};
+
+// CSS custom properties (these use the Sass variables above)
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #{$white};
+  --foreground: #{$black};
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #{$black};
+    --foreground: #{$white};
   }
 }
