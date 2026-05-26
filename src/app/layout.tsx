@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./styles/globals.scss";
 import { ReactLenis } from "lenis/react";
@@ -17,7 +17,8 @@ export const metadata: Metadata = {
     default: "Justin Peter | Dev Folio",
     template: "%s | Justin Peter",
   },
-  description: "Full-stack Developer Portfolio — projects, skills, and more.",
+  description:
+    "Full-stack developer building meaningful & creative web experiences.",
   keywords: ["developer", "portfolio", "full-stack", "react", "creative"],
   authors: [{ name: "Justin Peter" }],
   creator: "Justin Peter",
@@ -43,6 +44,12 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({
