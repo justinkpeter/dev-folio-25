@@ -19,10 +19,10 @@ export const projects = [
   },
   {
     title: "DevFolio",
-    meta: "Developer portfolio template",
-    desc: "A sleek, modern portfolio template for developers to showcase their projects and skills. Built with Next.js and Tailwind CSS.",
+    meta: "Developer portfolio",
+    desc: "A sleek, modern portfolio  for me to showcase my most recent projects and skills. Built with Next.js, Figma, and a whole lot of love.",
     stack: ["Next.js", "Figma", "UI/UX Design"],
-    url: "https://devfolio.com",
+    url: "https://justinpeter.dev",
     cover: "/img/devfolio.png",
     path: "devfolio",
   },
