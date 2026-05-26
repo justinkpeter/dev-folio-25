@@ -60,7 +60,7 @@ export default function ProjectCard({
           alt={meta}
           fill
           draggable={false}
-          style={{ transform: `translateY(${offset}px) scale(1.4)` }}
+          style={{ transform: `translateY(${offset}px) scale(1.6)` }}
         />
       </div>
     </Link>
