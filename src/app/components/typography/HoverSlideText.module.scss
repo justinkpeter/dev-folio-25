@@ -1,4 +1,4 @@
-$gap-size: 8px;
+$gap-size: 4px;
 
 .container {
   position: relative;
@@ -26,7 +26,20 @@ $gap-size: 8px;
   display: flex;
   align-items: center;
   white-space: nowrap;
-  padding: 0 $gap-size;
+
+  &:nth-child(2) {
+    background-color: #171717; // dark background
+    mix-blend-mode: difference;
+    color: #fff; // optional: make sure text stays visible
+
+    @media screen and (prefers-color-scheme: dark) {
+      background-color: #e8e8e8; // light background for dark mode
+      color: #171717; // ensure text is visible in dark mode
+    }
+  }
+
+  /* Use CSS variable for padding, fallback to default */
+  padding: 0 4px;
 
   /* Start hidden and shifted down */
   transform: translateY(100%);
@@ -38,4 +51,15 @@ $gap-size: 8px;
 /* Hover slides text up */
 .container:hover .text {
   transform: translateY(-100%);
+}
+
+@media (hover: none) {
+  .container:hover .text {
+    transform: translateY(0);
+  }
+
+  .text {
+    transform: translateY(0) !important;
+    transition: none !important;
+  }
 }

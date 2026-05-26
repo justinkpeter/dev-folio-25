@@ -1,0 +1,143 @@
+.footerWrapper {
+  max-width: 1880px;
+  margin: 0 auto;
+  background-color: #e8e8e8;
+  margin-bottom: 2rem;
+
+  @media screen and (prefers-color-scheme: dark) {
+    background-color: #252525;
+  }
+}
+
+.footer {
+  height: 560px;
+  clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 16px;
+  background-color: #e8e8e8;
+  position: relative;
+
+  @media screen and (min-width: 768px) {
+    height: 480px;
+    font-size: 16px;
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    background-color: #303030;
+  }
+
+  .footerContent {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(100%, 1880px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 0.5rem 10dvh;
+    box-sizing: border-box;
+
+    @media screen and (min-width: 768px) {
+      padding: 0 40px 20px;
+      align-items: center;
+    }
+  }
+
+  .cta {
+    text-transform: uppercase;
+    font-weight: 600;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 4px;
+    opacity: 0.6;
+    padding-top: 4px;
+  }
+
+  .nopad {
+    padding: 0 !important;
+  }
+
+  .email {
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+    width: auto;
+    height: fit-content;
+  }
+  .contact {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+    padding-left: 8px;
+
+    @media screen and (max-width: 768px) {
+      padding-left: 0;
+      gap: 2px;
+    }
+  }
+
+  .navigation {
+    display: flex;
+    width: 100%;
+    font-weight: 500;
+    gap: 4rem;
+
+    &Title {
+      font-weight: 600;
+      padding: 4px;
+      opacity: 0.6;
+      text-transform: uppercase;
+    }
+
+    @media screen and (max-width: 768px) {
+      padding: 0;
+      width: 100%;
+      box-sizing: border-box;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+
+  .socials,
+  .links {
+    // flex: 1 1 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .copyright {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 0;
+    }
+
+    .devFolio {
+      text-transform: uppercase;
+      line-height: 0.9em;
+      font-weight: 800;
+      font-size: 12dvw;
+      padding: 0;
+      letter-spacing: -0.06em;
+      margin: 0;
+
+      @media screen and (min-width: 768px) {
+        font-size: clamp(6rem, 10dvw, 10rem);
+      }
+    }
+  }
+}

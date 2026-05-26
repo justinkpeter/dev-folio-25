@@ -1,185 +1,80 @@
-@use "../../styles/variables" as *;
 @use "../../styles/animations";
 
 .hero {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  height: 90vh;
-  padding-bottom: 4rem;
-  position: relative;
-  z-index: 1;
+  height: 90dvh;
   user-select: none;
 
   @media screen and (min-width: 768px) {
-    padding-top: 10vh;
-    height: 85vh;
+    height: 100dvh;
   }
 }
 
 .stack {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0;
+  display: grid;
+  grid-template-rows: auto 0fr auto;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  width: fit-content;
+  animation: expandRow 0.9s cubic-bezier(0.76, 0, 0.24, 1) forwards 1s;
 }
 
-.heading {
+.headingTop,
+.headingBottom {
   font-weight: 800;
-  font-size: $big-hero-font-size;
+  font-size: clamp(3rem, 11vw, 4rem);
   text-transform: uppercase;
   line-height: 0.85;
   text-align: center;
   margin: 0;
   white-space: nowrap;
   opacity: 0;
-  padding-top: 0;
-  padding-bottom: 0;
+
+  @media screen and (min-width: 1536px) {
+    font-size: clamp(3rem, 11vw, 6rem);
+  }
 }
 
 .headingTop {
+  grid-row: 1;
+  transform: translateY(calc(100%));
   animation:
-    fadeInFull $header-fade-duration ease forwards $header-fade-delay,
-    growPaddingBottom $image-grow-duration cubic-bezier(0.76, 0, 0.24, 1)
-      forwards $image-grow-delay;
+    fadeIn 0.5s ease forwards 0s,
+    slideUp 0.9s cubic-bezier(0.76, 0, 0.24, 1) forwards 1.3s;
+  z-index: 2;
 }
 
 .headingBottom {
+  grid-row: 3;
+  transform: translateY(calc(-100%));
   animation:
-    fadeInFull $header-fade-duration ease forwards $header-fade-delay,
-    growPaddingTop $image-grow-duration cubic-bezier(0.76, 0, 0.24, 1) forwards
-      $image-grow-delay;
+    fadeIn 0.5s ease forwards 0s,
+    slideDown 0.9s cubic-bezier(0.76, 0, 0.24, 1) forwards 1s;
+  z-index: 1;
 }
 
-.folio {
-  width: 27.5vw;
-  overflow: hidden;
-  max-height: 0;
-  aspect-ratio: 3 / 4;
-  background-color: white;
-  border-radius: 8px;
+.image {
+  grid-row: 2;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  min-height: 0;
+  opacity: 0;
   position: relative;
-  z-index: 1;
-  animation: growHeight $image-grow-duration cubic-bezier(0.76, 0, 0.24, 1)
-    forwards $image-grow-delay;
+  border-radius: 8px;
+  overflow: hidden;
+  animation: fadeIn 1.2s ease forwards 1.6s;
 
   @media screen and (max-width: 768px) {
-    width: 80vw;
-  }
-
-  canvas {
-    display: block;
-    width: 100% !important;
-    height: 100% !important;
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(circle, #1a1a1a 1.5px, transparent 1.5px);
-    background-size: 10px 10px;
-    mask-image: radial-gradient(
-      ellipse 60% 70% at 50% 50%,
-      transparent 30%,
-      black 100%
-    );
-    opacity: 0.4;
-    z-index: 0;
-    pointer-events: none;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(circle, #b87333 1.5px, transparent 1.5px);
-    background-size: 10px 10px;
-    opacity: 0;
-    z-index: 0;
-    pointer-events: none;
-    animation: dot-copper-shimmer 7s ease-in-out infinite;
-  }
-}
-
-.parallaxWrapper {
-  width: 100%;
-  height: 100%;
-  min-height: clamp(200px, 36.67vw, 500px);
-  position: relative;
-  overflow: hidden;
-
-  img {
-    object-fit: cover;
-    object-position: center;
-    transition: transform 0.1s linear;
-  }
-
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 60%;
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  &::before {
-    top: 0;
-    backdrop-filter: blur(32px);
-    mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
-  }
-
-  &::after {
-    bottom: 0;
-    backdrop-filter: blur(32px);
-    mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
+    width: 80dvw;
   }
 }
 
 .subTitle {
-  font-weight: 400;
-  opacity: 0;
-  font-size: 16px;
-  text-align: center;
-  animation: fadeInSubtle 0.5s ease forwards $subtitle-delay;
-}
-
-.scrollHint {
   margin-top: 1rem;
-  pointer-events: none;
-}
-
-@keyframes growHeight {
-  from {
-    max-height: 0;
-  }
-  to {
-    max-height: 40vh;
-  }
-}
-
-@keyframes growPaddingBottom {
-  from {
-    padding-bottom: 0;
-  }
-  to {
-    padding-bottom: 0.2em;
-  }
-}
-
-@keyframes growPaddingTop {
-  from {
-    padding-top: 0;
-  }
-  to {
-    padding-top: 0.2em;
-  }
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards 2.5s;
 }

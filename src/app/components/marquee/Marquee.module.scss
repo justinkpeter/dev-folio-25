@@ -6,10 +6,32 @@
   position: relative;
   display: flex;
   align-items: center;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", monospace;
-
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    monospace;
   letter-spacing: 0.05em;
+
+  // Fade edges using a mask instead of overlay elements
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
 }
 
 .marqueeContent {
@@ -38,25 +60,4 @@
 
 .pauseOnHover:hover .track {
   animation-play-state: paused;
-}
-
-.fadeLeft,
-.fadeRight {
-  position: absolute;
-  top: 0;
-  width: 20px;
-  height: 100%;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.fadeLeft {
-  left: 0;
-  background: linear-gradient(to right, $black, transparent);
-  z-index: 1;
-}
-
-.fadeRight {
-  right: 0;
-  background: linear-gradient(to left, $black, transparent);
 }

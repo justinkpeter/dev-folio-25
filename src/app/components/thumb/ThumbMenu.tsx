@@ -16,19 +16,30 @@ const links = [
     text: "Projects",
   },
   {
-    href: "/about",
+    href: "/#about",
     imageSrc: "/img/about.png",
     imageAlt: "About",
     text: "About",
   },
 ];
 
-export default function ThumbMenu({ isOpen }: { isOpen: boolean }) {
+export default function ThumbMenu({
+  isOpen,
+  onClose,
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+}) {
   return (
     <div className={clsx(styles.menu, { [styles.open]: isOpen })}>
       <nav>
         {links.map((link) => (
-          <NavLink key={link.href} {...link} isOpen={isOpen} />
+          <NavLink
+            key={link.href}
+            {...link}
+            isOpen={isOpen}
+            onClick={onClose}
+          />
         ))}
         <hr />
       </nav>

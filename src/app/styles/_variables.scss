@@ -3,13 +3,13 @@ $black: #252525;
 $white: #ffffff;
 
 // Typography
-$big-hero-font-size: clamp(2rem, 4vw, 5rem);
+$big-hero-font-size: clamp(2rem, 4dvw, 5rem);
 
 // Animation timing
 $header-fade-duration: 1.4s;
 $header-fade-delay: 0.2s;
 $image-grow-duration: 0.8s;
-$image-grow-delay: 0.8s;
+$image-grow-delay: 1.4s;
 $subtitle-delay: #{$image-grow-delay + 0.6s};
 
 // CSS custom properties (these use the Sass variables above)

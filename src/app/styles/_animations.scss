@@ -1,4 +1,22 @@
-@keyframes fadeInFull {
+@keyframes slideUp {
+  from {
+    transform: translateY(calc(100%));
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(calc(-100%));
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
   from {
     opacity: 0;
   }
@@ -7,47 +25,8 @@
   }
 }
 
-@keyframes fadeInSubtle {
-  from {
-    opacity: 0;
-  }
+@keyframes expandRow {
   to {
-    opacity: 0.5;
-  }
-}
-
-@keyframes dot-copper-shimmer {
-  0% {
-    opacity: 0;
-    mask-image: linear-gradient(
-      105deg,
-      transparent 0%,
-      transparent 35%,
-      rgba(0, 0, 0, 0.8) 45%,
-      rgba(0, 0, 0, 1) 50%,
-      rgba(0, 0, 0, 0.8) 55%,
-      transparent 65%,
-      transparent 100%
-    );
-    mask-position: -100% 0;
-    mask-size: 300% 100%;
-  }
-  5% {
-    opacity: 0.7;
-  }
-  10%,
-  15% {
-    opacity: 0.5;
-  }
-  30% {
-    opacity: 0;
-    mask-position: 200% 0;
-    mask-size: 300% 100%;
-  }
-  31%,
-  100% {
-    opacity: 0;
-    mask-position: 200% 0;
-    mask-size: 300% 100%;
+    grid-template-rows: auto 1fr auto;
   }
 }

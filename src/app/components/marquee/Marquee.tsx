@@ -20,8 +20,6 @@ export default function Marquee({
       }`}
       style={{ "--speed": `${speed}s` } as React.CSSProperties}
     >
-      <div className={styles.fadeLeft} />
-      <div className={styles.fadeRight} />
       <div className={styles.marqueeContent}>
         <div className={styles.track}>
           <span>{children}</span>

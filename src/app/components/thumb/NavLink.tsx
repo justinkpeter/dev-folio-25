@@ -9,6 +9,7 @@ type Props = {
   imageAlt: string;
   text: string;
   isOpen?: boolean;
+  onClick?: () => void;
 };
 
 export default function NavLink({
@@ -17,12 +18,14 @@ export default function NavLink({
   imageAlt,
   text,
   isOpen,
+  onClick,
 }: Props) {
   return (
     <Link
       href={href}
       className={clsx(styles.navLink, { [styles.open]: isOpen })}
       title={text}
+      onClick={onClick}
     >
       <div className={styles.navLink__image}>
         <img src={imageSrc} alt={imageAlt} />

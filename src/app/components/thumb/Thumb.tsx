@@ -10,7 +10,7 @@ export default function Thumb() {
 
   return (
     <div className={styles.thumb}>
-      <ThumbMenu isOpen={isOpen} />
+      <ThumbMenu isOpen={isOpen} onClose={() => setIsOpen(!open)} />
       <ThumbBar isOpen={isOpen} toggleOpen={() => setIsOpen((prev) => !prev)} />
     </div>
   );

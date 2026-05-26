@@ -1,0 +1,126 @@
+.projectCard {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1240px;
+  gap: 1rem;
+  padding: 1rem 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  background: rgba(211, 211, 211, 0.2);
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column-reverse;
+  }
+
+  &:hover {
+    cursor: pointer;
+    .projectCardImage > img {
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
+    }
+  }
+
+  .projectCardImage > img {
+    transform: scale(1);
+    transition: transform 0.3s ease;
+  }
+}
+
+.projectCardInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 500px;
+
+  h2 {
+    margin-bottom: 3rem;
+  }
+
+  p {
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
+
+.projectCardImage {
+  min-width: 600px;
+  height: 500px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+
+  img {
+    user-select: none;
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+  }
+
+  @media screen and (max-width: 768px) {
+    min-width: unset;
+    width: 100%;
+    height: 260px;
+  }
+}
+
+.techStack {
+  display: flex;
+  flex-direction: column;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 6px;
+    width: 80%;
+
+    li {
+      marker: none;
+      background-color: rgb(202, 202, 202);
+      padding: 4px 6px;
+      border-radius: 6px;
+      font-family:
+        ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", monospace;
+      font-size: small;
+      font-weight: 500;
+
+      @media screen and (min-width: 768px) {
+        font-size: large;
+      }
+    }
+  }
+}
+
+.techStack,
+.description {
+  margin-top: 2rem;
+
+  h6 {
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    font-size: medium;
+    font-weight: 600;
+    opacity: 0.6;
+  }
+}
+
+.description {
+  max-width: 600px;
+}
+
+.projectCardLink {
+  text-transform: uppercase;
+  text-decoration: underline;
+  margin-top: 1rem;
+  font-weight: 500;
+
+  :hover {
+    cursor: pointer;
+  }
+}
