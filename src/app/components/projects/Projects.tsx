@@ -9,7 +9,7 @@ export default function Projects() {
         <h1>Recent Works</h1>
       </div>
       <div className={styles.projects}>
-        {projects.map((project, i) => (
+        {projects.slice(0, 3).map((project, i) => (
           <ProjectCard
             key={i}
             name={project.title}

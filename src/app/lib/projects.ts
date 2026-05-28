@@ -1,5 +1,21 @@
 export const projects = [
   {
+    title: "Paletto",
+    meta: "Color palette tool",
+    desc: "Upload any photo and extract a 6-color palette with AI-generated names. Drag to reorder, lock favorites across regenerations, save palettes to your account, and share them via URL.",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Supabase",
+      "Claude API",
+      "SCSS",
+      "dnd-kit",
+    ],
+    cover: "/img/paletto.png",
+    path: "paletto",
+    url: "https://paletto-colors.netlify.app",
+  },
+  {
     title: "Blendify",
     meta: "Music discovery tool",
     desc: "Blendify is a minimal discovery tool for premium spotify users who want a deeper dive into their listening habits.",
