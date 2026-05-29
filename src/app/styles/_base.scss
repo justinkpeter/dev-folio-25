@@ -17,6 +17,10 @@ body {
   overflow-x: visible;
   letter-spacing: -0.06em;
   padding: 0 0.5rem;
+
+  @media (max-width: 768px) {
+    padding: 0 4px;
+  }
 }
 
 * {

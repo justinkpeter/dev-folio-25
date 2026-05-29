@@ -24,7 +24,7 @@ export default function ProjectCard({
   stack,
   description,
 }: ProjectCardProps) {
-  const { ref, offset } = useParallax(100);
+  const { ref, offset } = useParallax(50);
 
   return (
     <Link

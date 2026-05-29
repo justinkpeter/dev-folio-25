@@ -1,29 +1,42 @@
 .projectCard {
+  --card-bg: rgba(211, 211, 211, 0.2);
+  --card-bg-hover: rgba(211, 211, 211, 0.32);
+  --card-border: rgba(0, 0, 0, 0.08);
+  --tag-bg: rgb(202, 202, 202);
+
+  --radius-card: 12px;
+  --radius-image: 10px;
+  --radius-tag: 6px;
+
+  --space-section: 2rem; 
+  --space-label: 0.625rem; 
+  --card-pad: 1.5rem;
+
   width: 100%;
+  max-width: 1240px;
   display: flex;
   justify-content: space-between;
-  max-width: 1240px;
-  gap: 1rem;
-  padding: 1rem 0.5rem;
-  border-radius: 4px;
+  gap: 1.5rem;
+  padding: var(--card-pad);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  background: var(--card-bg);
   transition: background-color 0.2s ease;
-  background: rgba(211, 211, 211, 0.2);
-
-  @media screen and (max-width: 768px) {
-    flex-direction: column-reverse;
-  }
 
   &:hover {
     cursor: pointer;
-    .projectCardImage > img {
-      transform: scale(1.05);
-      transition: transform 0.3s ease;
-    }
+    background: var(--card-bg-hover);
   }
 
-  .projectCardImage > img {
-    transform: scale(1);
-    transition: transform 0.3s ease;
+  @media screen and (max-width: 768px) {
+    flex-direction: column-reverse;
+    --card-pad: 1rem;
+    gap: 1.25rem;
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    --card-border: rgba(255, 255, 255, 0.08);
+    --tag-bg: rgb(30, 30, 30);
   }
 }
 
@@ -31,33 +44,38 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-width: 0; 
   max-width: 500px;
 
-  h2 {
-    margin-bottom: 3rem;
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-section);
   }
 
-  p {
-    font-size: 18px;
-    font-weight: 500;
+  h2 {
+    margin: 0; 
+    line-height: 1.1;
+  }
+
+  @media screen and (max-width: 768px) {
+    max-width: 100%;
   }
 }
 
 .projectCardImage {
+  flex-shrink: 0;
   min-width: 600px;
   height: 500px;
   position: relative;
-  border-radius: 8px;
+  border-radius: var(--radius-image);
   overflow: hidden;
-  transition: transform 0.3s ease;
 
   img {
-    user-select: none;
-    -webkit-user-drag: none;
-    -moz-user-drag: none;
-    -o-user-drag: none;
     object-fit: cover;
     object-position: center;
+    user-select: none;
+    -webkit-user-drag: none;
     transition: transform 0.3s ease;
   }
 
@@ -71,56 +89,63 @@
 .techStack {
   display: flex;
   flex-direction: column;
+  gap: var(--space-label);
 
   ul {
     display: flex;
     flex-wrap: wrap;
-    list-style: none;
     gap: 6px;
-    width: 80%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 
     li {
-      marker: none;
-      background-color: rgb(202, 202, 202);
-      padding: 4px 6px;
-      border-radius: 6px;
+      padding: 0.35em 0.65em;
+      border-radius: var(--radius-tag);
+      background-color: var(--tag-bg);
       font-family:
         ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
         "Liberation Mono", monospace;
-      font-size: small;
+      font-size: 0.875rem;
       font-weight: 500;
-
-      @media screen and (min-width: 768px) {
-        font-size: large;
-      }
+      line-height: 1.2;
     }
   }
 }
 
-.techStack,
 .description {
-  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-label);
 
-  h6 {
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-    font-size: medium;
-    font-weight: 600;
-    opacity: 0.6;
+  p {
+    margin: 0;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.6;
   }
 }
 
-.description {
-  max-width: 600px;
+.techStack h6,
+.description h6 {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  opacity: 0.6;
 }
 
 .projectCardLink {
+  margin-top: 1rem;
   text-transform: uppercase;
   text-decoration: underline;
-  margin-top: 1rem;
+  text-underline-offset: 3px;
   font-weight: 500;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
 
-  :hover {
-    cursor: pointer;
-  }
+.projectCard:hover .projectCardLink {
+  opacity: 1;
 }

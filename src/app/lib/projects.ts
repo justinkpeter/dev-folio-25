@@ -29,7 +29,7 @@ export const projects = [
     meta: "Photography portfolio",
     desc: "Moody, intentional, unapologetically human. A curated collection of moments that stopped me in my tracks — shot by me, for me. A personal project to remind myself that there's beauty in the details.",
     stack: ["Next.js", "Motion", "Lenis", "Photography", "Art Direction"],
-    cover: "/img/jim.jpg",
+    cover: "/img/jim.png",
     path: "justincrediblemoments",
     url: "https://justincrediblemoments.netlify.app/",
   },

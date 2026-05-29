@@ -3,6 +3,7 @@ import styles from "./SelectedProject.module.scss";
 import { projects } from "@/app/lib/projects";
 import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import BackButton from "./BackButton";
 
 export default async function SelectedProject({
   params,
@@ -16,6 +17,7 @@ export default async function SelectedProject({
 
   return (
     <PageTransition>
+      <BackButton className={styles.backLink} fallback="/projects" />
       <h1 className={styles.projectTitle}>{selectedProject?.title || slug}</h1>
       <div className={styles.selectedProject}>
         <div className={styles.projectDetails}>
