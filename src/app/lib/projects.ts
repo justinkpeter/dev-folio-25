@@ -1,13 +1,13 @@
 export const projects = [
-  {
-    title: "Paletto",
-    meta: "Color palette tool",
-    desc: "Upload any photo and extract a 6-color palette with AI-generated names. Drag to reorder, lock favorites across regenerations, save palettes to your account, and share them via URL.",
-    stack: ["Next.js", "TypeScript", "Supabase", "Claude API", "dnd-kit"],
-    cover: "/img/paletto.png",
-    path: "paletto",
-    url: "https://paletto-colors.netlify.app",
-  },
+  // {
+  //   title: "Paletto",
+  //   meta: "Color palette tool",
+  //   desc: "Upload any photo and extract a 6-color palette with AI-generated names. Drag to reorder, lock favorites across regenerations, save palettes to your account, and share them via URL.",
+  //   stack: ["Next.js", "TypeScript", "Supabase", "Claude API", "dnd-kit"],
+  //   cover: "/img/paletto.png",
+  //   path: "paletto",
+  //   url: "https://paletto-colors.netlify.app",
+  // },
   {
     title: "Blendify",
     meta: "Music discovery tool",
@@ -18,19 +18,10 @@ export const projects = [
     url: "https://blendifyv6.netlify.app/",
   },
   {
-    title: "Justincredible Moments",
-    meta: "Photography portfolio",
-    desc: "Moody, intentional, unapologetically human. A personal photography project to remind myself that there's beauty in the details.",
-    stack: ["React", "TypeScript", "Photography", "UI/UX Design"],
-    cover: "/img/jim.png",
-    path: "justincrediblemoments",
-    url: "https://justincrediblemoments.netlify.app/",
-  },
-  {
     title: "DevFolio",
     meta: "Developer portfolio",
     desc: "A sleek, modern portfolio  for me to showcase my most recent projects and skills. Built with Next.js, Figma, and a whole lot of love.",
-    stack: ["Next.js", "Figma", "UI/UX Design, SCSS"],
+    stack: ["Next.js", "Figma", "UI/UX Design"],
     url: "https://justinpeter.dev",
     cover: "/img/devfolio.png",
     path: "devfolio",

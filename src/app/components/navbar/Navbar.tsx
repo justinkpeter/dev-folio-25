@@ -42,7 +42,7 @@ export default function Navbar() {
         <Link className={styles.navbar__link} href={"/resume"}>
           <HoverSlideText text={"Resume"} className={styles.navbar__link} />
         </Link>
-        <Link className={styles.navbar__link} href={"#about"}>
+        <Link className={styles.navbar__link} href={"/about"}>
           <HoverSlideText text={"About"} className={styles.navbar__link} />
         </Link>
         <Link className={styles.navbar__link} href={"#contact"}>

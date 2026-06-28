@@ -43,10 +43,10 @@ export default function Resume() {
           <div className={styles.sectionLabel}>About</div>
           <div className={styles.sectionContent}>
             <p>
-              Full stack engineer with 4+ years building products at
-              mission-driven edtech and healthtech startups. Brings structure to
-              growing codebases and owns features end to end, from design
-              systems and type-safe libraries to automated pipelines.
+              Full stack engineer with 5+ years building React UIs and
+              Node/Express APIs at product-stage startups. Strong in component
+              systems, form architecture, and test coverage. Currently pursuing
+              an M.S. in IT at Virginia Tech (online, part-time).
             </p>
           </div>
         </section>
@@ -99,28 +99,31 @@ export default function Resume() {
               </div>
               <ul className={styles.bullets}>
                 <li>
-                  Introduced atomic design principles, building a library of 20+
-                  reusable components and a GitLab-powered Storybook pipeline
-                  that reduced handoff friction and accelerated feature delivery
-                  across the product.
+                  Introduced atomic design principles to the codebase, building
+                  a library of 20+ reusable components and a GitLab-powered
+                  Storybook pipeline, establishing a shared design-dev component
+                  language that reduced handoff friction and accelerated feature
+                  delivery across the product.
                 </li>
                 <li>
-                  Built and owned a monthly automated insights pipeline using
-                  Node.js Cron jobs, MongoDB aggregations, and a custom email
-                  template delivering data-driven engagement reports to 100+
-                  partner schools with zero regressions.
+                  Built and maintained a monthly automated insights pipeline
+                  using Node.js Cron jobs, MongoDB aggregations, and a custom
+                  email template and stylesheet delivering data-driven
+                  engagement reports to 100+ partner schools and writing test
+                  suites to ensure zero regressions across each release cycle.
                 </li>
                 <li>
                   Built a reusable TypeScript form validation library from
                   scratch, eliminating duplicated validation logic across 12+
                   forms with a consistent, type-safe system backed by Jest unit
-                  test coverage.
+                  test coverage ensuring reliability across all validation
+                  rules.
                 </li>
                 <li>
-                  Established a Jest testing baseline across React components,
-                  shared utility functions, and API response shape validation
-                  for role-based access, improving refactor confidence and
-                  reducing manual regression surface area.
+                  Extended and maintained an internal CMS, implementing AWS
+                  asset uploading with async duplicate file detection and
+                  migrating legacy JavaScript to TypeScript to improve
+                  reliability and maintainability.
                 </li>
                 <li>
                   Rearchitected legacy dashboards with role-based widgets,
@@ -151,15 +154,17 @@ export default function Resume() {
                   users alongside a full company rebrand.
                 </li>
                 <li>
-                  Maintained and extended a Syncfusion calendar component,
+                  Maintained and extended a Syncfusion based calendar component,
                   implementing recurring appointments, cancellation and no-show
-                  fee logic, and appointment status tracking across the
-                  platform's core clinical workflow.
+                  fee logic, and appointment status tracking supporting
+                  thousands of scheduling interactions across the platform's
+                  core clinical workflow.
                 </li>
                 <li>
                   Integrated Google Calendar API with two-way sync, enabling
-                  real-time appointment management and reducing scheduling
-                  conflicts across clinician workflows.
+                  real-time appointment management across the platform and
+                  Google Calendar reducing scheduling conflicts and keeping
+                  clinician workflows in sync.
                 </li>
               </ul>
             </div>
@@ -181,20 +186,22 @@ export default function Resume() {
               </div>
               <ul className={styles.bullets}>
                 <li>
-                  Wrote and maintained Cypress E2E test suites covering full
-                  user flows, form validation, click handlers, and API calls
-                  with DRY patterns that reduced regressions across core
+                  Wrote and maintained Cypress end-to-end test suites covering
+                  full user flows, form validation, click handlers, and API
+                  calls standardizing form and utility function testing with DRY
+                  patterns that measurably reduced regressions across core
                   onboarding and scheduling workflows.
                 </li>
                 <li>
                   Performed manual testing across payment ledger workflows and
                   form-based user flows, catching calculation errors and UI
-                  inconsistencies before production.
+                  inconsistencies before reaching production.
                 </li>
                 <li>
-                  Worked directly alongside developers in daily standups and
-                  2-week sprint cycles using Git, Postman, and Monday.com to
-                  keep test coverage aligned with active development.
+                  Collaborated directly with developers in 2-week sprint cycles,
+                  using Postman to validate API contracts and aligning test
+                  coverage with active development to catch issues before code
+                  merged.
                 </li>
               </ul>
             </div>
