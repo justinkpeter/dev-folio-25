@@ -8,7 +8,7 @@ import useParallax from "../hooks/useParallax";
 import Link from "next/link";
 
 export default function Projects() {
-  const { ref: imageRef, offset } = useParallax(100);
+  const { ref: imageRef, offset } = useParallax(20);
 
   return (
     <PageTransition>
@@ -27,7 +27,7 @@ export default function Projects() {
                   alt={projects[i].title}
                   objectFit="cover"
                   fill
-                  style={{ transform: `translateY(${offset}px) scale(1.7)` }}
+                  style={{ transform: `translateY(${offset}px) scale(1.3)` }}
                 />
               </div>
               <div className={styles.projectMeta}>
