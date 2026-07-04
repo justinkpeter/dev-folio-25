@@ -9,6 +9,7 @@ import {
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 import BezierCurveLine from "./BezierCurveLine";
+import Link from "next/link";
 
 export default function Hero() {
   const bem = new BemBuilder("hero", styles);
@@ -29,21 +30,44 @@ export default function Hero() {
         <div className={bem.element("meta")}>
           <div className={bem.element("location")}>Piedmont Triad, NC</div>
           <div className={bem.element("socials")}>
-            <FontAwesomeIcon
-              icon={faLinkedin}
-              className={bem.element("socialIcon")}
-            />
-            <FontAwesomeIcon
-              icon={faGithub}
-              className={bem.element("socialIcon")}
-            />
-            <FontAwesomeIcon
-              icon={faInstagram}
-              className={bem.element("socialIcon")}
-            />
+            <Link
+              href="https://www.linkedin.com/in/justinkmpeter"
+              target="_blank"
+              className={bem.element("socialLink")}
+              title="LinkedIn"
+            >
+              <FontAwesomeIcon
+                icon={faLinkedin}
+                className={bem.element("socialIcon")}
+              />
+            </Link>
+            <Link
+              href="https://github.com/justinkpeter"
+              target="_blank"
+              className={bem.element("socialLink")}
+              title="GitHub"
+            >
+              <FontAwesomeIcon
+                icon={faGithub}
+                className={bem.element("socialIcon")}
+              />
+            </Link>
+            <Link
+              href="https://www.instagram.com/justincrediblemoments"
+              target="_blank"
+              className={bem.element("socialLink")}
+              title="Instagram"
+            >
+              <FontAwesomeIcon
+                icon={faInstagram}
+                className={bem.element("socialIcon")}
+              />
+            </Link>
+          </div>
+          <div className={bem.element("curve")}>
+            <BezierCurveLine strength={0.25} />
           </div>
         </div>
-        <BezierCurveLine strength={0.25} />
       </div>
     </section>
   );
