@@ -18,7 +18,7 @@ export default function Experience() {
               <div className={bem.element("dates")}>{item.dates}</div>
               <div className={bem.element("job")}>
                 <div className={bem.element("position")}>
-                  {item.position} at
+                  <span>{item.position}</span>
                   <div className={bem.element("company")}>
                     <img
                       src={experienceImg(item.company)}
@@ -36,7 +36,7 @@ export default function Experience() {
           ))}
           <div className={bem.element("resume")}>
             <Link href="/resume" target="_blank" data-cursor="View resume">
-              View Resume
+              See Resume
             </Link>
           </div>
         </div>

@@ -86,11 +86,17 @@
 
   &__position {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.25rem;
     font-weight: bold;
     white-space: normal;
+
+    @media screen and (min-width: 810px) {
+      flex-wrap: wrap;
+      flex-direction: row;
+      gap: 0.25rem;
+    }
   }
 
   &__description {
@@ -113,6 +119,11 @@
     @media (min-width: 1200px) {
       place-self: flex-end;
       max-width: 720px;
+    }
+
+    a {
+      text-decoration: underline;
+      opacity: 0.6;
     }
   }
 
