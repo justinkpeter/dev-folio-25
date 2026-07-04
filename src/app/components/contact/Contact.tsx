@@ -5,11 +5,7 @@ import styles from "./Contact.module.scss";
 
 import { BemBuilder } from "@/app/lib/BemBuilder";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faXTwitter,
-  faGithub,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
@@ -21,13 +17,11 @@ export interface ContactLink {
 }
 
 export interface ContactProps {
-  /** Eyebrow label, e.g. "Contact" */
   eyebrow?: string;
   description?: string;
   links: ContactLink[];
 }
 
-// Convenience presets matching the reference screenshot's default link set.
 export const DEFAULT_CONTACT_LINKS: Omit<ContactLink, "href" | "value">[] = [
   { label: "Email", icon: faEnvelope },
   { label: "GitHub", icon: faGithub },
