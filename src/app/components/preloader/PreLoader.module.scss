@@ -1,8 +1,8 @@
 .preloader {
   position: fixed;
   inset: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100dvw;
+  height: 100dvh;
   overflow: hidden;
 
   &__overlay {
@@ -14,6 +14,10 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+
+    @media (prefers-color-scheme: dark) {
+      background: var(--background);
+    }
   }
 
   &__wrapper {
@@ -31,6 +35,10 @@
     color: #111111;
     white-space: pre;
     text-transform: uppercase;
+
+    @media (prefers-color-scheme: dark) {
+      color: rgba(#ffffff, 1);
+    }
   }
 
   &__char {

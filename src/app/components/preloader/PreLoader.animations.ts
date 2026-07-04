@@ -33,7 +33,7 @@ export const overlayVariants: Variants = {
     transition: { duration: STAGE_DURATION, ease: STAGE_EASE },
   },
   thin: {
-    height: 2,
+    height: 0,
     top: 0,
     transition: { duration: STAGE_DURATION, ease: STAGE_EASE },
   },
@@ -46,7 +46,7 @@ export const wrapperVariants: Variants = {
     transition: { duration: ENTRANCE_DURATION, ease: ENTRANCE_EASE },
   },
   exit: {
-    y: "-120vh",
+    y: "-130vh",
     transition: { duration: STAGE_DURATION, ease: STAGE_EASE },
   },
 };

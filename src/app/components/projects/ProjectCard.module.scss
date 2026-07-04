@@ -19,7 +19,7 @@
   padding: var(--card-pad);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-card);
-  // background: var(--card-bg);
+
   transition: background-color 0.2s ease;
   overflow: hidden;
 
@@ -65,13 +65,10 @@
 
   &:hover &__icon {
     opacity: 1;
-    // transform: rotate(45deg);
-    // transform: rotate3d(0, 0, 0, 0deg);
   }
 
   @media (max-width: 1200px) {
     gap: 1rem;
-    // flex-direction: column;
   }
 }
 
@@ -80,7 +77,6 @@
   flex-direction: column;
   justify-content: space-between;
   min-width: 0;
-  // max-width: 500px;
 
   > div {
     display: flex;
@@ -103,8 +99,7 @@
   aspect-ratio: 1/1;
   width: 100%;
   height: auto;
-  // min-width: 600px;
-  // height: 500px;
+
   position: relative;
   border-radius: var(--radius-image);
   overflow: hidden;

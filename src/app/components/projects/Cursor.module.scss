@@ -34,12 +34,13 @@
     //   rgba(255, 255, 255, 0.4)
     // );
     backdrop-filter: blur(16px);
+    background: var(--foreground);
   }
 }
 
 .text {
   font-size: 14px;
-  color: white;
+  color: var(--background);
   text-transform: uppercase;
   pointer-events: none;
   line-height: 1;
@@ -50,6 +51,6 @@
   letter-spacing: -0.05em;
 
   @media screen and (prefers-color-scheme: dark) {
-    // color: #252525;
+    color: var(--background);
   }
 }
