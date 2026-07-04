@@ -3,14 +3,15 @@
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./ProjectCard.module.scss";
-import useParallax from "@/app/hooks/useParallax";
+import { BemBuilder } from "@/app/lib/BemBuilder";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSquareArrowUpRight } from "@fortawesome/free-solid-svg-icons";
 
 interface ProjectCardProps {
   name: string;
   cover: string;
   meta: string;
   path: string;
-  stack: string[];
   zIndex?: number;
   description?: string;
 }
@@ -21,46 +22,30 @@ export default function ProjectCard({
   meta,
   path,
   zIndex,
-  stack,
   description,
 }: ProjectCardProps) {
-  const { ref, offset } = useParallax(50);
+  const bem = new BemBuilder("projectCard", styles);
 
   return (
     <Link
       href={`/projects/${path}`}
-      className={styles.projectCard}
+      className={bem.block()}
       data-cursor="View project"
     >
-      <div className={styles.projectCardInfo}>
-        <div>
-          <h2>{name}</h2>
-          <div className={styles.techStack}>
-            <h6>tech stack</h6>
-            <ul>
-              {stack.map((tech) => (
-                <li key={tech}>{tech}</li>
-              ))}
-            </ul>
-          </div>
-          <div className={styles.description}>
-            <h6>description</h6>
-            <p>{description}</p>
-          </div>
+      <div className={bem.element("imageContainer")}>
+        <div className={bem.element("image")} style={{ zIndex: zIndex || 1 }}>
+          <Image src={cover} alt={meta} fill draggable={false} />
         </div>
-        <span className={styles.projectCardLink}>View Project</span>
       </div>
-      <div
-        ref={ref}
-        className={styles.projectCardImage}
-        style={{ zIndex: zIndex || 1 }}
-      >
-        <Image
-          src={cover}
-          alt={meta}
-          fill
-          draggable={false}
-          style={{ transform: `translateY(${offset}px) scale(1.6)` }}
+      <div className={bem.element("info")}>
+        <h4>{name}</h4>
+        <p>{description}</p>
+      </div>
+      <div className={bem.element("icon")}>
+        <FontAwesomeIcon
+          icon={faSquareArrowUpRight}
+          className={bem.element("socialIcon")}
+          size="lg"
         />
       </div>
     </Link>

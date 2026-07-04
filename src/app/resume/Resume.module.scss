@@ -1,23 +1,50 @@
 .resume {
   min-height: 100dvh;
-  padding: 6rem 0;
-}
+  padding: 6.875rem 1rem 6rem;
+  width: 100%;
+  position: relative;
 
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
+  &__content {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding-bottom: 2rem;
+    span {
+      font-size: 0.875rem;
+    }
+  }
 
-  h1 {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 2rem;
+    gap: 1rem;
+
+    @media (max-width: 810px) {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  }
+
+  &__headerLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  &__eyebrow {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.6);
+    letter-spacing: 0.1em;
+    font-weight: 600;
+  }
+
+  &__name {
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 800;
     text-transform: uppercase;
@@ -26,180 +53,176 @@
     color: rgb(31, 153, 193);
   }
 
-  p {
-    margin: 0.25rem 0 0;
-    opacity: 0.5;
-    font-size: 18px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: 600;
-  }
-}
+  &__links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
 
-.headerRight {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 6px;
+    @media (max-width: 810px) {
+      align-items: flex-start;
+    }
 
-  a {
-    font-size: 18px;
-    opacity: 0.6;
-    text-decoration: none;
-    transition: opacity 0.2s ease;
+    a {
+      font-size: 0.875rem;
+      opacity: 0.6;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
 
-    &:hover {
-      opacity: 1;
+      &:hover {
+        opacity: 1;
+      }
     }
   }
-}
 
-.downloadBtn {
-  margin-top: 8px;
-  font-size: 16px !important;
-  font-weight: 700 !important;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding: 6px 14px;
-  border: 1px solid currentColor;
-  border-radius: 4px;
-  opacity: 1 !important;
-  transition:
-    background 0.2s ease,
-    color 0.2s ease !important;
+  &__download {
+    margin-top: 8px;
+    font-size: 0.875rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 6px 14px;
+    border: 1px solid currentColor;
+    border-radius: 4px;
+    opacity: 1 !important;
+    transition:
+      background 0.2s ease,
+      color 0.2s ease !important;
 
-  &:hover {
-    background: var(--foreground) !important;
-    color: var(--background) !important;
+    &:hover {
+      background: var(--foreground) !important;
+      color: var(--background) !important;
+    }
   }
-}
 
-.divider {
-  width: 100%;
-  height: 1px;
-  background: currentColor;
-  opacity: 0.12;
-}
-
-.section {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  padding: 2rem 0;
-
-  @media screen and (min-width: 768px) {
-    flex-direction: row;
-    gap: 5rem;
+  &__divider {
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.12;
   }
-}
 
-.sectionLabel {
-  font-size: 16px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  opacity: 0.4;
-  padding-top: 4px;
-  white-space: nowrap;
+  &__section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem 0;
 
-  @media screen and (min-width: 768px) {
-    width: 120px;
+    @media (min-width: 1200px) {
+      flex-direction: row;
+      gap: 5rem;
+    }
+  }
+
+  &__label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.6);
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    padding-top: 4px;
+    white-space: nowrap;
+
+    @media (min-width: 1200px) {
+      min-width: 30%;
+      flex-shrink: 0;
+    }
+  }
+
+  &__body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    p {
+      margin: 0;
+      line-height: 1.6;
+      font-size: 1rem;
+      text-box-trim: all;
+    }
+  }
+
+  &__skills {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__skillRow {
+    display: flex;
+    gap: 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  &__skillLabel {
+    font-weight: 700;
+    opacity: 0.6;
+    width: 90px;
     flex-shrink: 0;
   }
-}
 
-.sectionContent {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  &__role {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 
-  p {
+  &__roleHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  &__position {
+    font-weight: bold;
+    font-size: 1.125rem;
+  }
+
+  &__company {
+    font-size: 0.875rem;
+    opacity: 0.6;
+    margin-top: 2px;
+  }
+
+  &__dates {
+    font-size: 0.75rem;
+    opacity: 0.6;
+    white-space: nowrap;
+    padding-top: 2px;
+  }
+
+  &__stack {
+    font-size: 0.75rem;
+    opacity: 0.6;
+    font-weight: 500;
+    margin-top: -4px;
+    letter-spacing: 0.03em;
+
+    @media (max-width: 810px) {
+      font-size: 0.8rem;
+    }
+  }
+
+  &__bullets {
+    margin: 0.25rem 0 0;
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    li {
+      font-size: 1rem;
+      line-height: 1.6;
+      opacity: 0.85;
+    }
+  }
+
+  &__note {
+    font-size: 0.8rem;
+    opacity: 0.6;
     margin: 0;
-    line-height: 1.6;
-    font-size: 18px;
   }
-}
-
-.skillsGrid {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.skillRow {
-  display: flex;
-  gap: 1rem;
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-.skillCategory {
-  font-weight: 700;
-  opacity: 0.5;
-  width: 90px;
-  flex-shrink: 0;
-}
-
-.role {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.roleHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-.roleTitle {
-  font-weight: 700;
-  font-size: 20px;
-}
-
-.roleMeta {
-  font-size: 18px;
-  opacity: 0.5;
-  margin-top: 2px;
-}
-
-.roleDates {
-  font-size: 18px;
-  opacity: 0.5;
-  white-space: nowrap;
-  padding-top: 2px;
-}
-
-.roleStack {
-  font-size: 16px;
-  opacity: 0.5;
-  font-weight: 500;
-  margin-top: -4px;
-  letter-spacing: -0.03em;
-
-  @media screen and (max-width: 768px) {
-    font-size: 14px;
-  }
-}
-
-.bullets {
-  margin: 0.25rem 0 0;
-  padding-left: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-
-  li {
-    font-size: 18px;
-    line-height: 1.6;
-    opacity: 0.85;
-  }
-}
-
-.roleNote {
-  font-size: 13px;
-  opacity: 0.5;
-  margin: 0;
 }

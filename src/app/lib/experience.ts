@@ -1,8 +1,11 @@
+const imageLogoPath = (company: string) =>
+  `/img/${company.toLowerCase().replace(/\s+/g, "_")}.png`;
+
 const experience = [
   {
     company: "The Social Institute",
     position: "Full Stack Engineer",
-    dates: "2023 - Present",
+    dates: "2023 - 2026",
     location: "Remote",
     stack: ["MongoDB", "Express", "React", "Node.js", "TypeScript", "Jest"],
     description:
@@ -13,25 +16,27 @@ const experience = [
       "Built a reusable TypeScript form validation library eliminating duplicated logic across 12+ forms, backed by Jest unit test coverage.",
       "Rearchitected legacy dashboards with role-based widgets and CTAs in collaboration with the Co-Founder & CDO, driving a 23% increase in CTA click rates and measurable improvements in feature adoption.",
     ],
+    logo: imageLogoPath("The Social Institute"),
   },
   {
     company: "Birch Notes",
     position: "Full Stack Engineer",
-    dates: "Jun 2021 - Jul 2022",
+    dates: "2021 - 2022",
     location: "Hybrid",
     stack: ["MySQL", "Express", "Vue.js", "Node.js"],
     description:
-      "Joined as a QA Engineer and grew into a full stack role, helping scope and ship a full dashboard rebuild and company rebrand in under 6 months for a mental health SaaS platform serving 100+ clinicians.",
+      "Helped scope and ship a full dashboard rebuild and company rebrand in under 6 months for a mental health SaaS platform serving 100+ clinicians.",
     bullets: [
       "Maintained and extended a Syncfusion calendar component with recurring appointments, cancellation and no-show fee logic, and appointment status tracking across the platform's core clinical workflow.",
       "Integrated Google Calendar API with two-way sync, keeping clinician workflows in sync and reducing scheduling conflicts across the platform.",
       "Helped scope and ship a dashboard rebuild from scratch in under 6 months alongside a full company rebrand.",
     ],
+    logo: imageLogoPath("Birch Notes"),
   },
   {
     company: "Birch Notes",
     position: "Quality Assurance Engineer",
-    dates: "Dec 2020 - May 2021",
+    dates: "2020 - 2021",
     location: "On-site",
     stack: ["Cypress", "Git", "Postman", "Monday.com"],
     description:
@@ -41,6 +46,7 @@ const experience = [
       "Performed manual testing across payment ledger workflows and form-based user flows, catching calculation errors and UI inconsistencies before production.",
       "Worked directly with developers in daily standups and 2-week sprint cycles using Git, Postman, and Monday.com.",
     ],
+    logo: imageLogoPath("BirchNotes"),
   },
 ];
 

@@ -1,32 +1,48 @@
 "use client";
 
-import AsciiBackground from "../typography/AsciiBackground";
-import Model from "./Model";
+import { BemBuilder } from "@/app/lib/BemBuilder";
 import styles from "./Hero.module.scss";
-import useParallax from "@/app/hooks/useParallax";
-import ScrambleText from "../typography/ScrambleText";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faLinkedin,
+  faGithub,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
 
 export default function Hero() {
-  const { ref: heroRef } = useParallax(100);
+  const bem = new BemBuilder("hero", styles);
 
   return (
-    <div className={styles.hero} ref={heroRef}>
-      <div className={styles.stack}>
-        <h1 className={styles.headingTop}>
-          <ScrambleText
-            text={`Dev Folio '${new Date().getFullYear().toString().slice(-2)}`}
-          />
-        </h1>
-        <div className={styles.image}>
-          <AsciiBackground />
-          <Model />
+    <section className={bem.block()}>
+      <div className={bem.element("content")}>
+        <div className={bem.element("intro")}>
+          <div className={bem.element("role")}>creative developer</div>
+          <h1 className={bem.element("name")}>Justin Peter</h1>
+          <div className={bem.element("tagline")}>
+            A builder and engineer who never loses sight of who the work is for.
+          </div>
+          <div className={bem.element("availability")}>
+            Currently looking for the next big thing to work on. Open to roles.
+          </div>
         </div>
-        <h1 className={styles.headingBottom}>Justin Peter</h1>
-        <div className={styles.subTitle}>
-          <div> Creative Developer </div>
-          <div> [ scroll for goodies ↓] </div>
+        <div className={bem.element("meta")}>
+          <div className={bem.element("location")}>Piedmont Triad, NC</div>
+          <div className={bem.element("socials")}>
+            <FontAwesomeIcon
+              icon={faLinkedin}
+              className={bem.element("socialIcon")}
+            />
+            <FontAwesomeIcon
+              icon={faGithub}
+              className={bem.element("socialIcon")}
+            />
+            <FontAwesomeIcon
+              icon={faInstagram}
+              className={bem.element("socialIcon")}
+            />
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

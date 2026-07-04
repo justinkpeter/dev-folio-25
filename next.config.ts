@@ -5,6 +5,14 @@ const nextConfig: NextConfig = {
   sassOptions: {
     loadPaths: ["./src/app"],
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

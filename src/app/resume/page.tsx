@@ -1,16 +1,19 @@
 import styles from "./Resume.module.scss";
+import { BemBuilder } from "@/app/lib/BemBuilder";
 
 export default function Resume() {
+  const bem = new BemBuilder("resume", styles);
+
   return (
-    <main className={styles.resume}>
-      <div className={styles.container}>
+    <main className={bem.block()}>
+      <div className={bem.element("content")}>
         {/* Header */}
-        <header className={styles.header}>
-          <div className={styles.headerLeft}>
-            <h1>Justin Peter</h1>
-            <p>Software Engineer</p>
+        <header className={bem.element("header")}>
+          <div className={bem.element("headerLeft")}>
+            <span className={bem.element("eyebrow")}>Software Engineer</span>
+            <h1 className={bem.element("name")}>Justin Peter</h1>
           </div>
-          <div className={styles.headerRight}>
+          <div className={bem.element("links")}>
             <a href="mailto:hello@justinpeter.dev">hello@justinpeter.dev</a>
             <a
               href="https://www.linkedin.com/in/justinkmpeter/"
@@ -29,19 +32,19 @@ export default function Resume() {
             <a
               href="/resume.pdf"
               download="Justin Peter - Resume.pdf"
-              className={styles.downloadBtn}
+              className={bem.element("download")}
             >
               Download PDF
             </a>
           </div>
         </header>
 
-        <div className={styles.divider} />
+        <div className={bem.element("divider")} />
 
         {/* About */}
-        <section className={styles.section}>
-          <div className={styles.sectionLabel}>About</div>
-          <div className={styles.sectionContent}>
+        <section className={bem.element("section")}>
+          <span className={bem.element("label")}>About</span>
+          <div className={bem.element("body")}>
             <p>
               Full stack engineer with 5+ years building React UIs and
               Node/Express APIs at product-stage startups. Strong in component
@@ -51,53 +54,55 @@ export default function Resume() {
           </div>
         </section>
 
-        <div className={styles.divider} />
+        <div className={bem.element("divider")} />
 
         {/* Skills */}
-        <section className={styles.section}>
-          <div className={styles.sectionLabel}>Skills</div>
-          <div className={styles.sectionContent}>
-            <div className={styles.skillsGrid}>
-              <div className={styles.skillRow}>
-                <span className={styles.skillCategory}>Languages</span>
-                <span>TypeScript, JavaScript, SQL, MQL, Java, HTML, CSS</span>
+        <section className={bem.element("section")}>
+          <span className={bem.element("label")}>Skills</span>
+          <div className={bem.element("body")}>
+            <div className={bem.element("skills")}>
+              <div className={bem.element("skillRow")}>
+                <span className={bem.element("skillLabel")}>Languages</span>
+                <span>TypeScript, JavaScript, SQL, Java</span>
               </div>
-              <div className={styles.skillRow}>
-                <span className={styles.skillCategory}>Frontend</span>
+              <div className={bem.element("skillRow")}>
+                <span className={bem.element("skillLabel")}>Frontend</span>
                 <span>React, RTK Query, Vue, Storybook, Figma</span>
               </div>
-              <div className={styles.skillRow}>
-                <span className={styles.skillCategory}>Backend</span>
+              <div className={bem.element("skillRow")}>
+                <span className={bem.element("skillLabel")}>Backend</span>
                 <span>Node.js, Express.js, REST APIs</span>
               </div>
-              <div className={styles.skillRow}>
-                <span className={styles.skillCategory}>Databases</span>
+              <div className={bem.element("skillRow")}>
+                <span className={bem.element("skillLabel")}>Databases</span>
                 <span>MongoDB, MySQL, PostgreSQL</span>
               </div>
             </div>
           </div>
         </section>
 
-        <div className={styles.divider} />
+        <div className={bem.element("divider")} />
 
         {/* Experience */}
-        <section className={styles.section}>
-          <div className={styles.sectionLabel}>Experience</div>
-          <div className={styles.sectionContent}>
-            <div className={styles.role}>
-              <div className={styles.roleHeader}>
+        <section className={bem.element("section")}>
+          <span className={bem.element("label")}>Experience</span>
+          <div className={bem.element("body")}>
+            <div className={bem.element("role")}>
+              <div className={bem.element("roleHeader")}>
                 <div>
-                  <div className={styles.roleTitle}>Full Stack Engineer</div>
-                  <div className={styles.roleMeta}>
+                  <div className={bem.element("position")}>
+                    Full Stack Engineer
+                  </div>
+                  <div className={bem.element("company")}>
                     The Social Institute · Remote
                   </div>
                 </div>
-                <div className={styles.roleDates}>Aug 2023 – Present</div>
+                <div className={bem.element("dates")}>Aug 2023 – Present</div>
               </div>
-              <div className={styles.roleStack}>
+              <div className={bem.element("stack")}>
                 MongoDB · Express · React · Node.js · TypeScript
               </div>
-              <ul className={styles.bullets}>
+              <ul className={bem.element("bullets")}>
                 <li>
                   Introduced atomic design principles to the codebase, building
                   a library of 20+ reusable components and a GitLab-powered
@@ -134,20 +139,22 @@ export default function Resume() {
               </ul>
             </div>
 
-            <div className={styles.role}>
-              <div className={styles.roleHeader}>
+            <div className={bem.element("role")}>
+              <div className={bem.element("roleHeader")}>
                 <div>
-                  <div className={styles.roleTitle}>Full Stack Engineer</div>
-                  <div className={styles.roleMeta}>
-                    BirchNotes (formerly Therapax) · Hybrid
+                  <div className={bem.element("position")}>
+                    Full Stack Engineer
+                  </div>
+                  <div className={bem.element("company")}>
+                    BirchNotes · Hybrid
                   </div>
                 </div>
-                <div className={styles.roleDates}>Jun 2021 – Jul 2022</div>
+                <div className={bem.element("dates")}>Jun 2021 – Jul 2022</div>
               </div>
-              <div className={styles.roleStack}>
+              <div className={bem.element("stack")}>
                 MySQL · Express · Vue · Node.js
               </div>
-              <ul className={styles.bullets}>
+              <ul className={bem.element("bullets")}>
                 <li>
                   Helped scope and ship a dashboard rebuild from scratch in
                   under 6 months, improving the core product experience for 100+
@@ -157,8 +164,8 @@ export default function Resume() {
                   Maintained and extended a Syncfusion based calendar component,
                   implementing recurring appointments, cancellation and no-show
                   fee logic, and appointment status tracking supporting
-                  thousands of scheduling interactions across the platform's
-                  core clinical workflow.
+                  thousands of scheduling interactions across the
+                  platform&apos;s core clinical workflow.
                 </li>
                 <li>
                   Integrated Google Calendar API with two-way sync, enabling
@@ -169,22 +176,22 @@ export default function Resume() {
               </ul>
             </div>
 
-            <div className={styles.role}>
-              <div className={styles.roleHeader}>
+            <div className={bem.element("role")}>
+              <div className={bem.element("roleHeader")}>
                 <div>
-                  <div className={styles.roleTitle}>
+                  <div className={bem.element("position")}>
                     Quality Assurance Engineer
                   </div>
-                  <div className={styles.roleMeta}>
-                    BirchNotes (formerly Therapax) · On-site
+                  <div className={bem.element("company")}>
+                    BirchNotes · On-site
                   </div>
                 </div>
-                <div className={styles.roleDates}>Dec 2020 – May 2021</div>
+                <div className={bem.element("dates")}>Dec 2020 – May 2021</div>
               </div>
-              <div className={styles.roleStack}>
+              <div className={bem.element("stack")}>
                 Cypress · Git · Postman · Monday.com
               </div>
-              <ul className={styles.bullets}>
+              <ul className={bem.element("bullets")}>
                 <li>
                   Wrote and maintained Cypress end-to-end test suites covering
                   full user flows, form validation, click handlers, and API
@@ -208,37 +215,37 @@ export default function Resume() {
           </div>
         </section>
 
-        <div className={styles.divider} />
+        <div className={bem.element("divider")} />
 
         {/* Education */}
-        <section className={styles.section}>
-          <div className={styles.sectionLabel}>Education</div>
-          <div className={styles.sectionContent}>
-            <div className={styles.role}>
-              <div className={styles.roleHeader}>
+        <section className={bem.element("section")}>
+          <span className={bem.element("label")}>Education</span>
+          <div className={bem.element("body")}>
+            <div className={bem.element("role")}>
+              <div className={bem.element("roleHeader")}>
                 <div>
-                  <div className={styles.roleTitle}>
+                  <div className={bem.element("position")}>
                     Master of Science, Information Technology
                   </div>
-                  <div className={styles.roleMeta}>Virginia Tech</div>
+                  <div className={bem.element("company")}>Virginia Tech</div>
                 </div>
-                <div className={styles.roleDates}>Jan 2026 – Present</div>
+                <div className={bem.element("dates")}>Jan 2026 – Present</div>
               </div>
-              <p className={styles.roleNote}>
+              <p className={bem.element("note")}>
                 Graduate Certificates in Big Data & Software Development
               </p>
             </div>
-            <div className={styles.role}>
-              <div className={styles.roleHeader}>
+            <div className={bem.element("role")}>
+              <div className={bem.element("roleHeader")}>
                 <div>
-                  <div className={styles.roleTitle}>
+                  <div className={bem.element("position")}>
                     Bachelor of Science, Computer Engineering
                   </div>
-                  <div className={styles.roleMeta}>
+                  <div className={bem.element("company")}>
                     University of South Florida
                   </div>
                 </div>
-                <div className={styles.roleDates}>May 2022</div>
+                <div className={bem.element("dates")}>May 2022</div>
               </div>
             </div>
           </div>

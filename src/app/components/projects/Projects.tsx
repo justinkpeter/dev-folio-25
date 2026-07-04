@@ -1,27 +1,28 @@
 import { projects } from "@/app/lib/projects";
 import ProjectCard from "./ProjectCard";
 import styles from "./Projects.module.scss";
+import { BemBuilder } from "@/app/lib/BemBuilder";
 
 export default function Projects() {
+  const bem = new BemBuilder("projects", styles);
   return (
-    <div>
-      <div className={styles.stickyHeader}>
-        <h1>Recent Works</h1>
+    <section id="projects" className={bem.block()}>
+      <div className={bem.element("content")}>
+        <span className={bem.element("eyebrow")}>Recent Works</span>
+        <div className={bem.element("list")}>
+          {projects.slice(0, 3).map((project, i) => (
+            <ProjectCard
+              key={i}
+              name={project.title}
+              cover={project.cover}
+              meta={project.meta}
+              path={project.path}
+              description={project.desc}
+              zIndex={i + 1}
+            />
+          ))}
+        </div>
       </div>
-      <div className={styles.projects}>
-        {projects.slice(0, 3).map((project, i) => (
-          <ProjectCard
-            key={i}
-            name={project.title}
-            cover={project.cover}
-            meta={project.meta}
-            path={project.path}
-            stack={project.stack}
-            description={project.desc}
-            zIndex={i + 1}
-          />
-        ))}
-      </div>
-    </div>
+    </section>
   );
 }

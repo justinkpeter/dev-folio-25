@@ -2,7 +2,7 @@ export const projects = [
   {
     title: "Paletto",
     meta: "Color palette tool",
-    desc: "Generate beautiful OKLCH color palettes without the Coolors paywall. Extract from any image, apply harmony schemes and mood profiles, drag to reorder, and share via URL.",
+    desc: "Generate beautiful color palettes effortlessly.",
     stack: [
       "Next.js",
       "TypeScript",
@@ -18,7 +18,7 @@ export const projects = [
   {
     title: "Blendify",
     meta: "Music discovery tool",
-    desc: "Blendify is a minimal discovery tool for premium Spotify users who want a deeper dive into their listening habits.",
+    desc: "A musicdiscovery tool for Spotify users.",
     stack: ["Spotify API", "Next.js", "Figma", "Product Design"],
     cover: "/img/blendify.png",
     path: "blendify",
@@ -27,7 +27,7 @@ export const projects = [
   {
     title: "DevFolio",
     meta: "Developer portfolio",
-    desc: "A sleek, modern portfolio  for me to showcase my most recent projects and skills. Built with Next.js, Figma, and a whole lot of love.",
+    desc: "Modern portfolio to showcase projects & skills.",
     stack: ["Next.js", "Figma", "UI/UX Design"],
     url: "https://justinpeter.dev",
     cover: "/img/devfolio.png",

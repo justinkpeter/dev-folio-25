@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
-import "./styles/globals.scss";
 import { ReactLenis } from "lenis/react";
-import Thumb from "./components/thumb/Thumb";
 import Navbar from "./components/navbar/Navbar";
 import Cursor from "./components/projects/Cursor";
-import Footer from "./components/footer/Footer";
+import PreLoader from "./components/preloader/PreLoader";
+import "./styles/globals.scss";
+import HashScrollHandler from "./lib/HashScrollHandler";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -61,11 +61,11 @@ export default function RootLayout({
     <html lang="en" dir="ltr">
       <body className={`${inter.variable}`}>
         <ReactLenis root />
-        {children}
+        <PreLoader />
+        <HashScrollHandler />
         <Navbar />
-        <Thumb />
+        {children}
         <Cursor />
-        <Footer />
       </body>
     </html>
   );

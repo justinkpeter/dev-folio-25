@@ -1,84 +1,141 @@
 .experience {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  justify-content: center;
-  padding: 5rem 0;
+  padding-bottom: 2rem;
+  width: 100%;
+  position: relative;
 
-  @media screen and (min-width: 768px) {
-    flex-direction: row;
-    gap: 5rem;
-    font-size: 20px;
-    min-height: 60dvh;
+  &__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 4rem;
+    padding: 0 0 24px;
+
+    @media (min-width: 1200px) {
+      justify-content: center;
+      justify-self: center;
+      max-width: 720px;
+    }
+
+    @media (max-width: 810px) {
+      flex-direction: column;
+    }
+  }
+
+  &__eyebrow {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  &__title {
+    min-width: 30%;
+    font-size: 0.875rem;
+  }
+
+  &__label {
+    display: inline-block;
+  }
+
+  &__bio {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    p {
+      text-box-trim: all;
+    }
   }
 
   &__item {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 0.5rem;
 
-    & > :first-child {
-      font-weight: 700;
+    @media (min-width: 1200px) {
+      flex-direction: row;
+      gap: 4rem;
     }
   }
 
-  &__list {
-    margin-top: 2rem;
+  &__job {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    max-width: 600px;
+    width: 100%;
+    align-self: stretch;
+    gap: 8px;
+  }
 
-    @media screen and (min-width: 768px) {
-      margin-top: 0;
-    }
+  &__company {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    align-items: center;
+    gap: 6px;
 
-    @media screen and (max-width: 768px) {
-      margin-top: 0.5rem;
+    img {
+      width: 1.5rem;
+      height: 1.5rem;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 4px;
     }
   }
 
-  &__details {
+  &__position {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 8px;
-    opacity: 0.6;
-    font-weight: 500;
+    gap: 0.5rem;
+    font-weight: bold;
+    white-space: normal;
   }
 
   &__description {
-    margin-top: 8px;
-  }
-
-  .title {
-    text-transform: uppercase;
-    font-weight: 700;
-
-    @media screen and (min-width: 768px) {
-      width: 550px;
+    p {
+      text-box-trim: all;
+      opacity: 0.6;
     }
   }
 
-  &__stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-
-  &__tag {
-    border-radius: 4px;
-    opacity: 0.8;
+  &__dates {
+    min-width: 30%;
+    font-size: 0.75rem;
+    opacity: 0.6;
   }
 
   &__resume {
-    margin-top: 6rem;
+    margin-top: 2rem;
+    place-self: flex-start;
 
-    a {
-      font-weight: 500;
-      text-decoration: underline;
+    @media (min-width: 1200px) {
+      place-self: flex-end;
+      max-width: 720px;
+    }
+  }
+
+  &__logo {
+    box-shadow: 0 0 4px rgba(0, 0, 4, 0.1);
+  }
+
+  &__stack {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
 
-    @media screen and (max-width: 768px) {
-      margin-top: 0.5rem;
+    li {
+      background-color: #00000041;
+      padding: 0.25rem 0.75rem;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      opacity: 0.6;
     }
   }
 }

@@ -4,39 +4,74 @@
   --card-border: rgba(0, 0, 0, 0.08);
   --tag-bg: rgb(202, 202, 202);
 
-  --radius-card: 12px;
+  --radius-card: 8px;
   --radius-image: 10px;
   --radius-tag: 6px;
 
-  --space-section: 2rem; 
-  --space-label: 0.625rem; 
-  --card-pad: 1.5rem;
-
+  --space-section: 2rem;
+  --space-label: 0.625rem;
+  --card-pad: 8px;
   width: 100%;
   max-width: 1240px;
   display: flex;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: 1rem;
   padding: var(--card-pad);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-card);
-  background: var(--card-bg);
+  // background: var(--card-bg);
   transition: background-color 0.2s ease;
+  overflow: hidden;
 
   &:hover {
     cursor: pointer;
     background: var(--card-bg-hover);
   }
 
-  @media screen and (max-width: 768px) {
-    flex-direction: column-reverse;
-    --card-pad: 1rem;
-    gap: 1.25rem;
+  &__image {
+    flex-shrink: 0;
+
+    position: relative;
+    border-radius: var(--radius-image);
+    overflow: hidden;
+    height: 64px;
+    aspect-ratio: 1/1;
+
+    img {
+      object-fit: cover;
+      object-position: center;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
   }
 
-  @media screen and (prefers-color-scheme: dark) {
-    --card-border: rgba(255, 255, 255, 0.08);
-    --tag-bg: rgb(30, 30, 30);
+  &__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
+    transform-origin: center;
+  }
+
+  &:hover &__icon {
+    opacity: 1;
+    // transform: rotate(45deg);
+    // transform: rotate3d(0, 0, 0, 0deg);
+  }
+
+  @media (max-width: 1200px) {
+    gap: 1rem;
+    // flex-direction: column;
   }
 }
 
@@ -44,8 +79,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-width: 0; 
-  max-width: 500px;
+  min-width: 0;
+  // max-width: 500px;
 
   > div {
     display: flex;
@@ -54,7 +89,7 @@
   }
 
   h2 {
-    margin: 0; 
+    margin: 0;
     line-height: 1.1;
   }
 
@@ -65,8 +100,11 @@
 
 .projectCardImage {
   flex-shrink: 0;
-  min-width: 600px;
-  height: 500px;
+  aspect-ratio: 1/1;
+  width: 100%;
+  height: auto;
+  // min-width: 600px;
+  // height: 500px;
   position: relative;
   border-radius: var(--radius-image);
   overflow: hidden;
@@ -81,8 +119,8 @@
 
   @media screen and (max-width: 768px) {
     min-width: unset;
+    aspect-ratio: 1/1;
     width: 100%;
-    height: 260px;
   }
 }
 
