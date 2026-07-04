@@ -8,6 +8,7 @@ import {
   faGithub,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
+import BezierCurveLine from "./BezierCurveLine";
 
 export default function Hero() {
   const bem = new BemBuilder("hero", styles);
@@ -22,7 +23,7 @@ export default function Hero() {
             A builder and engineer who never loses sight of who the work is for.
           </div>
           <div className={bem.element("availability")}>
-            Currently looking for the next big thing to work on. Open to roles.
+            Currently looking for the next big thing to work on.
           </div>
         </div>
         <div className={bem.element("meta")}>
@@ -42,6 +43,7 @@ export default function Hero() {
             />
           </div>
         </div>
+        <BezierCurveLine strength={0.25} />
       </div>
     </section>
   );

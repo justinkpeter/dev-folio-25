@@ -1,0 +1,39 @@
+.line {
+  --hover-height: 500px;
+  --hover-offset: -250px;
+
+  height: 1px;
+  margin-bottom: 20px;
+  width: 100%;
+  position: relative;
+
+  &__box {
+    height: 40px;
+    width: 100%;
+    position: relative;
+    top: -20px;
+    z-index: 1;
+
+    &:hover {
+      height: var(--hover-height);
+      top: var(--hover-offset);
+    }
+  }
+
+  &__svg {
+    width: 100%;
+    height: var(--hover-height);
+    position: absolute;
+    top: var(--hover-offset);
+  }
+
+  &__path {
+    stroke: rgba(0, 0, 0, 0.4);
+    stroke-width: 1.5px;
+    fill: none;
+
+    @media (prefers-color-scheme: dark) {
+      stroke: rgba(255, 255, 255, 0.4);
+    }
+  }
+}
