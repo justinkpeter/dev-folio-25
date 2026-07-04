@@ -9,6 +9,13 @@
     border-radius: 0.5rem;
   }
 
+  &__heading {
+    font-size: 0.875rem;
+    opacity: 0.4;
+    padding-top: 0.25rem;
+    padding-left: 0.25rem;
+  }
+
   &__music {
     display: flex;
     gap: 1rem;

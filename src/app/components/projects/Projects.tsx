@@ -18,6 +18,7 @@ export default function Projects() {
               meta={project.meta}
               path={project.path}
               description={project.desc}
+              url={project.url}
               zIndex={i + 1}
             />
           ))}

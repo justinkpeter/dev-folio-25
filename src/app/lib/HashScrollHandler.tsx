@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useLenis } from "lenis/react";
 
 // Navbar height in px — keep in sync with Navbar.module.scss
-const NAVBAR_OFFSET = 96;
+const NAVBAR_OFFSET = 140;
 
 export default function HashScrollHandler() {
   const lenis = useLenis();

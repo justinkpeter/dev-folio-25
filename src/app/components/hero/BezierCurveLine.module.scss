@@ -28,12 +28,12 @@
   }
 
   &__path {
-    stroke: rgba(0, 0, 0, 0.4);
+    stroke: rgba(0, 0, 0, 0.2);
     stroke-width: 1.5px;
     fill: none;
 
     @media (prefers-color-scheme: dark) {
-      stroke: rgba(255, 255, 255, 0.4);
+      stroke: rgba(255, 255, 255, 0.2);
     }
   }
 }

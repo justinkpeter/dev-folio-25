@@ -14,6 +14,7 @@ interface ProjectCardProps {
   path: string;
   zIndex?: number;
   description?: string;
+  url?: string;
 }
 
 export default function ProjectCard({
@@ -23,14 +24,17 @@ export default function ProjectCard({
   path,
   zIndex,
   description,
+  url,
 }: ProjectCardProps) {
   const bem = new BemBuilder("projectCard", styles);
 
   return (
     <Link
-      href={`/projects/${path}`}
+      href={url || `/projects/${path}`}
       className={bem.block()}
       data-cursor="View project"
+      target="_blank"
+      rel="noopener noreferrer"
     >
       <div className={bem.element("imageContainer")}>
         <div className={bem.element("image")} style={{ zIndex: zIndex || 1 }}>

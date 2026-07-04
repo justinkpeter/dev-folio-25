@@ -10,6 +10,7 @@ export default function FavoriteSong() {
 
   return (
     <div className={bem.element("wrapper")}>
+      <div className={bem.element("heading")}>Recently on repeat</div>
       <div className={bem.element("music")}>
         <img
           src={

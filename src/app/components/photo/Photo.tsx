@@ -39,7 +39,7 @@ export default function Photo({ photos, instagramUrl }: PhotoProps) {
       {instagramUrl && (
         <div className={bem.element("social")}>
           <div className={bem.element("social__description")}>
-            Shot with Canon EOS R5
+            Shot EOS R5
             <CanonIcon />
           </div>
           <Link href={instagramUrl} target="_blank" rel="noopener noreferrer">
