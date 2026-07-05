@@ -30,7 +30,6 @@ export default function PreLoader({
 }: PreLoaderProps) {
   const [stage, setStage] = useState<Stage>(1);
   const [pointerBlocked, setPointerBlocked] = useState(true);
-  const [runId, setRunId] = useState(0); // bump to remount/replay the whole sequence
 
   const timers = useRef<number[]>([]);
   const rafId = useRef<number | null>(null);
@@ -55,11 +54,12 @@ export default function PreLoader({
     );
   }, [clearAllTimers]);
 
-  // Kick off on mount, and again whenever runId changes (tab refocus restart).
+  // Kick off once on mount only.
   useEffect(() => {
     runSequence();
     return clearAllTimers;
-  }, [runId, runSequence, clearAllTimers]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Stage 2 has no intentional hold — flow straight into stage 3 on the next
   // frame so the browser still gets a paint tick between the two variants.
@@ -78,18 +78,6 @@ export default function PreLoader({
     timers.current.push(id);
   }, [stage, onComplete]);
 
-  // Restart the whole sequence when the tab regains visibility.
-  useEffect(() => {
-    const handleVisibility = () => {
-      if (document.visibilityState === "visible") {
-        setRunId((n) => n + 1);
-      }
-    };
-    document.addEventListener("visibilitychange", handleVisibility);
-    return () =>
-      document.removeEventListener("visibilitychange", handleVisibility);
-  }, []);
-
   return (
     <div
       className={styles.preloader}
@@ -97,7 +85,6 @@ export default function PreLoader({
       aria-hidden="true"
     >
       <motion.div
-        key={runId}
         className={styles.preloader__overlay}
         variants={overlayVariants}
         initial="full"
@@ -111,7 +98,7 @@ export default function PreLoader({
         >
           <ScrambleText
             text={`Dev Folio '${new Date().getFullYear().toString().slice(-2)}`}
-            duration={1250}
+            duration={1200}
             className={styles.preloader__name}
           />
         </motion.div>

@@ -18,7 +18,7 @@ export const projects = [
   {
     title: "Blendify",
     meta: "Music discovery tool",
-    desc: "A musicdiscovery tool for Spotify users.",
+    desc: "A music discovery tool for Spotify users.",
     stack: ["Spotify API", "Next.js", "Figma", "Product Design"],
     cover: "/img/blendify.png",
     path: "blendify",

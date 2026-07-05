@@ -14,19 +14,15 @@ export default function About() {
           <p>
             I'm a full-stack software engineer with{" "}
             {new Date().getFullYear() - 2020}+ years of experience specializing
-            in frontend and UI development across SaaS products. Alongside
-            engineering, I've spent the past several years working as a
-            photographer and videographer, a background that shapes how I think
-            about interfaces, since composition, constraints, and delivery
-            matter as much on screen as they do behind a lens.
+            in frontend and UI development across SaaS products. I care as much
+            about how an interface feels as how it works, and build with an eye
+            for composition, constraint, and craft.
           </p>
           <p>
-            I'm comfortable navigating ambiguity when specs aren't fully
-            defined. I believe in intentional progress over perfection,
-            especially in code that's meant to evolve. Using Atomic Design
-            methodologies with a composition over configuration approach means
-            that I'm familiar with making both design and engineering decisions,
-            with no spec to follow but the system I'm building.
+            I'm comfortable with ambiguity, since it leaves room to make good
+            calls as things take shape. I favor momentum over perfection in code
+            meant to evolve, and I'm equally comfortable defining a direction as
+            I am executing on it.
           </p>
         </div>
       </div>

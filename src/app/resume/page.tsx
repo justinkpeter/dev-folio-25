@@ -104,36 +104,33 @@ export default function Resume() {
               </div>
               <ul className={bem.element("bullets")}>
                 <li>
-                  Introduced atomic design principles to the codebase, building
-                  a library of 20+ reusable components and a GitLab-powered
-                  Storybook pipeline, establishing a shared design-dev component
-                  language that reduced handoff friction and accelerated feature
-                  delivery across the product.
+                  Extended and maintained an internal CMS, implementing AWS
+                  asset uploading with async duplicate file detection, migrating
+                  legacy JavaScript to TypeScript, and building content workflow
+                  tooling used to manage enterprise web assets.
                 </li>
                 <li>
                   Built and maintained a monthly automated insights pipeline
-                  using Node.js Cron jobs, MongoDB aggregations, and a custom
-                  email template and stylesheet delivering data-driven
-                  engagement reports to 100+ partner schools and writing test
-                  suites to ensure zero regressions across each release cycle.
+                  using Node.js Cron jobs, MongoDB aggregations delivering
+                  data-driven engagement reports to 1000+ partner schools with
+                  case-specific test suites.
+                </li>
+                <li>
+                  Established development standards and documentation by
+                  introducing atomic design principles and a GitLab-powered
+                  Storybook pipeline, creating a shared design-dev component
+                  language that reduced handoff friction.
                 </li>
                 <li>
                   Built a reusable TypeScript form validation library from
-                  scratch, eliminating duplicated validation logic across 12+
-                  forms with a consistent, type-safe system backed by Jest unit
-                  test coverage ensuring reliability across all validation
-                  rules.
-                </li>
-                <li>
-                  Extended and maintained an internal CMS, implementing AWS
-                  asset uploading with async duplicate file detection and
-                  migrating legacy JavaScript to TypeScript to improve
-                  reliability and maintainability.
+                  scratch, eliminating duplicated logic across 12+ forms with a
+                  consistent, type-safe, system backed by Jest unit test
+                  coverage.
                 </li>
                 <li>
                   Rearchitected legacy dashboards with role-based widgets,
                   shortcuts, and CTAs in collaboration with the Co-Founder &
-                  CDO, driving a 23% increase in CTA click rates and measurable
+                  CDO, driving an increase in CTA click rates and measurable
                   improvements in feature adoption.
                 </li>
               </ul>
