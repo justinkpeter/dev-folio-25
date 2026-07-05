@@ -39,8 +39,6 @@ export default function Resume() {
           </div>
         </header>
 
-        <div className={bem.element("divider")} />
-
         {/* About */}
         <section className={bem.element("section")}>
           <span className={bem.element("label")}>About</span>
@@ -53,8 +51,6 @@ export default function Resume() {
             </p>
           </div>
         </section>
-
-        <div className={bem.element("divider")} />
 
         {/* Skills */}
         <section className={bem.element("section")}>
@@ -80,8 +76,6 @@ export default function Resume() {
             </div>
           </div>
         </section>
-
-        <div className={bem.element("divider")} />
 
         {/* Experience */}
         <section className={bem.element("section")}>

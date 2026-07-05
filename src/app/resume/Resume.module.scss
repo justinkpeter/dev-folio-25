@@ -118,18 +118,20 @@
 
     @media (min-width: 1200px) {
       flex-direction: row;
-      gap: 5rem;
+      gap: 4rem;
     }
   }
 
   &__label {
     font-size: 0.75rem;
-    text-transform: uppercase;
     color: rgba(0, 0, 0, 0.6);
-    letter-spacing: 0.1em;
-    font-weight: 700;
     padding-top: 4px;
     white-space: nowrap;
+
+    &__title {
+      min-width: 30%;
+      font-size: 0.875rem;
+    }
 
     @media (min-width: 1200px) {
       min-width: 30%;
@@ -169,7 +171,7 @@
   }
 
   &__skillLabel {
-    font-weight: 700;
+    font-weight: 600;
     opacity: 0.6;
     width: 90px;
     flex-shrink: 0;
@@ -229,6 +231,7 @@
       font-size: 1rem;
       line-height: 1.6;
       opacity: 0.85;
+      list-style-type: square;
     }
   }
 
