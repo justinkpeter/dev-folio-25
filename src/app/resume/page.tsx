@@ -10,7 +10,7 @@ export default function Resume() {
         {/* Header */}
         <header className={bem.element("header")}>
           <div className={bem.element("headerLeft")}>
-            <span className={bem.element("eyebrow")}>Software Engineer</span>
+            <span className={bem.element("eyebrow")}>Full Stack Engineer</span>
             <h1 className={bem.element("name")}>Justin Peter</h1>
           </div>
           <div className={bem.element("links")}>
@@ -21,13 +21,6 @@ export default function Resume() {
               rel="noopener noreferrer"
             >
               LinkedIn
-            </a>
-            <a
-              href="https://github.com/justinkpeter"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
             </a>
             <a
               href="/resume.pdf"
@@ -44,10 +37,12 @@ export default function Resume() {
           <span className={bem.element("label")}>About</span>
           <div className={bem.element("body")}>
             <p>
-              Full stack engineer with 5+ years building React UIs and
-              Node/Express APIs at product-stage startups. Strong in component
-              systems, form architecture, and test coverage. Currently pursuing
-              an M.S. in IT at Virginia Tech (online, part-time).
+              Five years of full-stack work at small startups, close enough to
+              the impact to know exactly who I&apos;m building for. I&apos;m
+              comfortable raising technical, design, and accessibility concerns
+              directly with co-founders and stakeholders, not just executing
+              what&apos;s handed to me. I care as much about code scaling
+              cleanly as I do about it working.
             </p>
           </div>
         </section>
@@ -58,20 +53,26 @@ export default function Resume() {
           <div className={bem.element("body")}>
             <div className={bem.element("skills")}>
               <div className={bem.element("skillRow")}>
-                <span className={bem.element("skillLabel")}>Languages</span>
-                <span>TypeScript, JavaScript, SQL, Java</span>
-              </div>
-              <div className={bem.element("skillRow")}>
                 <span className={bem.element("skillLabel")}>Frontend</span>
-                <span>React, RTK Query, Vue, Storybook, Figma</span>
+                <span>
+                  React, TypeScript, JavaScript, Vue, Tailwind, HTML/CSS,
+                  Storybook, Figma, Redux, Web Sockets
+                </span>
               </div>
               <div className={bem.element("skillRow")}>
                 <span className={bem.element("skillLabel")}>Backend</span>
-                <span>Node.js, Express.js, REST APIs</span>
+                <span>Node.js, Express.js, REST APIs, Java</span>
               </div>
               <div className={bem.element("skillRow")}>
                 <span className={bem.element("skillLabel")}>Databases</span>
-                <span>MongoDB, MySQL, PostgreSQL</span>
+                <span>MongoDB, MySQL, PostgreSQL, SQL</span>
+              </div>
+              <div className={bem.element("skillRow")}>
+                <span className={bem.element("skillLabel")}>Tooling</span>
+                <span>
+                  Heroku, Postman, Cypress, Jest (unit & integration testing),
+                  AWS S3, AWS Chime, GitLab, CI/CD Pipelines
+                </span>
               </div>
             </div>
           </div>
@@ -94,38 +95,36 @@ export default function Resume() {
                 <div className={bem.element("dates")}>Aug 2023 – Present</div>
               </div>
               <div className={bem.element("stack")}>
-                MongoDB · Express · React · Node.js · TypeScript
+                React · TypeScript · Node.js · MongoDB · Express.js · AWS S3
               </div>
               <ul className={bem.element("bullets")}>
                 <li>
-                  Extended and maintained an internal CMS, implementing AWS
-                  asset uploading with async duplicate file detection, migrating
-                  legacy JavaScript to TypeScript, and building content workflow
-                  tooling used to manage enterprise web assets.
-                </li>
-                <li>
-                  Built and maintained a monthly automated insights pipeline
-                  using Node.js Cron jobs, MongoDB aggregations delivering
-                  data-driven engagement reports to 1000+ partner schools with
-                  case-specific test suites.
-                </li>
-                <li>
-                  Established development standards and documentation by
-                  introducing atomic design principles and a GitLab-powered
-                  Storybook pipeline, creating a shared design-dev component
-                  language that reduced handoff friction.
+                  Built an automated insights pipeline (Node.js Cron jobs,
+                  MongoDB aggregations) delivering monthly engagement reports to
+                  1,000+ partner schools.
                 </li>
                 <li>
                   Built a reusable TypeScript form validation library from
-                  scratch, eliminating duplicated logic across 12+ forms with a
-                  consistent, type-safe, system backed by Jest unit test
-                  coverage.
+                  scratch, eliminating duplicate logic across 12+ forms backed
+                  by Jest test coverage.
                 </li>
                 <li>
-                  Rearchitected legacy dashboards with role-based widgets,
-                  shortcuts, and CTAs in collaboration with the Co-Founder &
-                  CDO, driving an increase in CTA click rates and measurable
-                  improvements in feature adoption.
+                  Built host-side navigation for a live, multiplayer classroom
+                  quiz game using Web Sockets, synchronizing real-time state
+                  across student devices as the teacher advanced through
+                  questions.
+                </li>
+                <li>
+                  Led design-to-dev process improvements by introducing atomic
+                  design principles and a GitLab-powered Storybook pipeline and
+                  sitting in recurring weekly design reviews with the lead
+                  designer and Co-Founder to flag technical feasibility and
+                  accessibility concerns before handoff.
+                </li>
+                <li>
+                  Extended internal CMS with AWS asset uploads, async duplicate
+                  detection, and content workflow tooling; migrated legacy
+                  JavaScript to TypeScript.
                 </li>
               </ul>
             </div>
@@ -140,29 +139,35 @@ export default function Resume() {
                     BirchNotes · Hybrid
                   </div>
                 </div>
-                <div className={bem.element("dates")}>Jun 2021 – Jul 2022</div>
+                <div className={bem.element("dates")}>May 2021 – Nov 2022</div>
               </div>
               <div className={bem.element("stack")}>
-                MySQL · Express · Vue · Node.js
+                Vue · Vite · Node.js · Express.js · MySQL · AWS Chime · AWS S3
               </div>
               <ul className={bem.element("bullets")}>
                 <li>
-                  Helped scope and ship a dashboard rebuild from scratch in
-                  under 6 months, improving the core product experience for 100+
-                  users alongside a full company rebrand.
+                  Collaborated with a team of 3 developers to rebuild the
+                  platform during a company-wide rebrand, migrating from React
+                  to Vue and Vite cutting load times from 3s to 0.7s (a 76%
+                  improvement) for hundreds of users.
                 </li>
                 <li>
-                  Maintained and extended a Syncfusion based calendar component,
-                  implementing recurring appointments, cancellation and no-show
-                  fee logic, and appointment status tracking supporting
-                  thousands of scheduling interactions across the
-                  platform&apos;s core clinical workflow.
+                  Extended a Syncfusion-based calendar component with recurring
+                  appointments, cancellation/no-show fee logic, and status
+                  tracking, scaling to 50K+ records as clinician sign-ups grew.
                 </li>
                 <li>
-                  Integrated Google Calendar API with two-way sync, enabling
-                  real-time appointment management across the platform and
-                  Google Calendar reducing scheduling conflicts and keeping
-                  clinician workflows in sync.
+                  Built an in-house telehealth feature using AWS Chime,
+                  replacing a third-party tool like Zoom and owning the client
+                  portal UI, meeting scheduling lifecycle, and session state
+                  management.
+                </li>
+                <li>
+                  Built HIPAA-compliant consent, intake, assessment, and
+                  toxicology forms with encrypted e-signature storage and
+                  permission-based access controls, yielding a foundational,
+                  legally required piece of the platform&apos;s core
+                  infrastructure.
                 </li>
               </ul>
             </div>
@@ -171,35 +176,28 @@ export default function Resume() {
               <div className={bem.element("roleHeader")}>
                 <div>
                   <div className={bem.element("position")}>
-                    Quality Assurance Engineer
+                    Full Stack Developer Intern
                   </div>
                   <div className={bem.element("company")}>
-                    BirchNotes · On-site
+                    BirchNotes · Hybrid
                   </div>
                 </div>
-                <div className={bem.element("dates")}>Dec 2020 – May 2021</div>
+                <div className={bem.element("dates")}>Jan 2021 – May 2021</div>
               </div>
               <div className={bem.element("stack")}>
-                Cypress · Git · Postman · Monday.com
+                Cypress · JavaScript · Postman · Git
               </div>
               <ul className={bem.element("bullets")}>
                 <li>
                   Wrote and maintained Cypress end-to-end test suites covering
                   full user flows, form validation, click handlers, and API
-                  calls standardizing form and utility function testing with DRY
-                  patterns that measurably reduced regressions across core
-                  onboarding and scheduling workflows.
+                  calls to ensure quality across a fast-moving agile sprint
+                  cycle.
                 </li>
                 <li>
-                  Performed manual testing across payment ledger workflows and
-                  form-based user flows, catching calculation errors and UI
-                  inconsistencies before reaching production.
-                </li>
-                <li>
-                  Collaborated directly with developers in 2-week sprint cycles,
-                  using Postman to validate API contracts and aligning test
-                  coverage with active development to catch issues before code
-                  merged.
+                  Performed manual testing across payment ledger and form-based
+                  workflows, catching calculation errors and UI inconsistencies
+                  before production.
                 </li>
               </ul>
             </div>
@@ -223,7 +221,8 @@ export default function Resume() {
                 <div className={bem.element("dates")}>Jan 2026 – Present</div>
               </div>
               <p className={bem.element("note")}>
-                Graduate Certificates in Big Data & Software Development
+                Graduate Certificates in Big Data & Software Development (earned
+                as part of degree program)
               </p>
             </div>
             <div className={bem.element("role")}>
@@ -236,7 +235,7 @@ export default function Resume() {
                     University of South Florida
                   </div>
                 </div>
-                <div className={bem.element("dates")}>May 2022</div>
+                <div className={bem.element("dates")}>May 2021</div>
               </div>
             </div>
           </div>
